@@ -18,34 +18,9 @@ export default function Application(props) {
     bookInterview, 
     cancelInterview 
   } = useApplicationData();
-  
-  
-  // useEffect( () => {
-
-  //   const requestDays = axios.get('http://localhost:8001/api/ days');
-  //   const requestAppointments = axios.get('http://  localhost:8001/api/appointments');
-  //   const requestInterviwers = axios.get('http://localhost:8001/  api/interviewers')
-
-  //   axios.all([requestDays,requestAppointments,   requestInterviwers])
-  //   .then((response) => {
-  //     //console.log('pritnResponse', response);
-  //     //console.log('days', response[0].data);
-  //     //console.log("interview", response[2].data)
-  //     setState(prev => ({ days: response[0].data, appointments: response[1].data, interviewers: response  [2].data}));
-    
-  // })
-  // .catch((err)=> {
-  //   console.log(err);
-  // })
-
-  // },[]);
-  
 
   const interviewers = getInterviewersForDay(state, state.day)
   
-
-
-
   return (
     <main className="layout">
       <section className="sidebar">

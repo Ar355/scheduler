@@ -76,7 +76,6 @@ export default function useApplicationData() {
         data: {interview}
       }).then(resp => {
         return setState({...state, appointments, days })
-
       });
     }
 
@@ -86,10 +85,11 @@ export default function useApplicationData() {
       const requestDays = axios.get('http://localhost:8001/api/days');
       const requestAppointments = axios.get('http://localhost:8001/api/appointments');
       const requestInterviwers = axios.get('http://localhost:8001/api/interviewers')
-
-      axios.all([requestDays,requestAppointments,   requestInterviwers])
+      
+      Promise.all([requestDays, requestAppointments, requestInterviwers])
       .then((response) => {
-        setState(prev => ({ days: response[0].data,   appointments: response[1].data, interviewers: response  [2].data}));
+
+        setState(prev => ({ ...prev, days: response[0].data, appointments: response[1].data, interviewers: response[2].data}));
       
     })
     .catch((err)=> {
