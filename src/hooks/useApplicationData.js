@@ -38,11 +38,8 @@ export default function useApplicationData() {
       })
      
 
-      return axios({
-        method: "DELETE",
-        url: `http://localhost:8001/api/appointments/${id}`,
-
-      }).then(resp => {
+      return axios.delete(`http://localhost:8001/api/appointments/${id}`)
+      .then(resp => {
         return setState({...state, appointments, days })
 
       });
