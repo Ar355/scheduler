@@ -21,3 +21,9 @@ npm test
 ```sh
 npm run storybook
 ```
+## Dependencies 
+
+axios
+@testing-library/react-hooks
+react-test-renderer
+any other Node packages you may have installed if you implemented stretch or extra features
