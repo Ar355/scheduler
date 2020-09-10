@@ -65,16 +65,20 @@ export default function useApplicationData() {
 
       days.forEach(day => { 
        if( day.appointments.includes(id)) {
-         day.spots += 1
+         day.spots -= 1
        }
  
       })
 
-      return axios({
-        method: "PUT",
-        url:`http://localhost:8001/api/appointments/${id}`, 
-        data: {interview}
-      }).then(resp => {
+      // return axios({
+      //   method: "PUT",
+      //   url:`http://localhost:8001/api/appointments/${id}`, 
+      //   data: {interview}
+      // }).then(resp => {
+      //   return setState({...state, appointments, days })
+      // });
+      return axios.put(`http://localhost:8001/api/appointments/${id}`,{interview})
+      .then(resp => {
         return setState({...state, appointments, days })
       });
     }

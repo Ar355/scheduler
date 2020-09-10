@@ -33,9 +33,18 @@ npm test
 npm run storybook
 ```
 ## Dependencies 
+    "@storybook/addon-actions"
+    "@storybook/addon-backgrounds"
+    "@storybook/addon-links"
+    "@storybook/addons"
+    "@storybook/react"
+    "@testing-library/jest-dom"
+    "@testing-library/react"
+    "@testing-library/react-hooks"
+    "node-sass"
+    "prop-type"
+    "react-test-renderer"
 
-axios
-@testing-library/react-hooks
-react-test-renderer
-any other Node packages you may have installed if you implemented stretch or extra features
+## Warnings 
+This is a project for learning purposes only.
 
