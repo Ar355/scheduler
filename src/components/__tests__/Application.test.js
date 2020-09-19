@@ -1,10 +1,11 @@
 import React from "react";
 
 
-import { getByText, queryByText, getByAltText, getByPlaceholderText, getAllByTestId, prettyDOM, render, cleanup , waitForElement, fireEvent} from "@testing-library/react";
+import { cleanup, getByText, queryByText, getByAltText, getByPlaceholderText, getAllByTestId, prettyDOM, render, cleanup , waitForElement, fireEvent} from "@testing-library/react";
 import Application from "components/Application";
 
 afterEach(cleanup);
+
 describe("Aplication", () => {
   it("changes the schedule when a new day is selected", async ()  => {
     const { getByText } = render(<Application />);
@@ -55,8 +56,10 @@ describe("Aplication", () => {
      // 8. Check that the DayListItem with the text "Monday" also has the text "2 spots remaining".
      const day = getAllByTestId(container, "day").find(day =>
       queryByText(day, "Monday"));
-     expect(getByText(day, "1 spot remaining")).toBeInTheDocument();
+     expect(getByText(day, "2 spots remaining")).toBeInTheDocument();
   });
+
+  
 
 
 });
